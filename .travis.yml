@@ -1,28 +1,28 @@
 language: python
-
 stages:
-  - test
-  - deploy
-
+- test
+- deploy
 jobs:
   include:
-    - stage: test
-      install: pip install tox codecov
-      python: 3.6
-      env:
-        - TOXENV=py36
-      script: tox
-    - stage: deploy
-      script: skip
-      python: 3.6
-      deploy:
-        provider: pypi
-        username: bgolden
-        password:
-          secure: PxEzBoEsODN7MA0B3lHqdhY8A+4K/DJ9jEQSaBZkqE/2fSFKoh6UKBlXZr7pd7ipMmZYU15ysqHPkOToA2pP8WG1guSLV150qUGRYOTd/EOP8TgufZ0VGRZOiQXuPFVp5cg32QOtaIzaxkDaUon1fpKiMXtMCckBMdJ0iL7HS4ZGltOGQsFbQXcdpIb6uYCixyXoiAFgksvySrM8G5mn65yjqhXUh+UnUxPTkhsF/HIKZM3ezhV3bY1hcX+l7J/ZxWisR0fT88q/COJn9zXQxGY0c4k5i1KtYX6r5Pbd8fFYg9D5GpKiylIdl+2K+NZuTzjCiBAjg1KfWg4tKh8gDDgy/QCa6gqojhsi+XnbeOraRsJ6tbRxLd1YXeyluQgp6w1Hi0Eg634mM+pZtb6SvYvGQz2sM0A7m9K/6tuFwqDN52pNaZpLvQd4jppIDmfwbAoB9ykAN2+mPtVp0fHoMczcAgUh+8olck1/nil3Hcw1nkKTa/VYOF+hoEylDQMwjSgApcgSwPTEgWMLRQNIUs+zVSkg+d+Jr65rOdIY3tdJ2RwnEov0QI8aW67xn1q1iBjCF8Ssyi/mbjwNeH1qt5Rw2wMullbVeHXHuIkSOetBZ5w/XSSF6v3Df3s9l3+F3dhMlRU/Pmym3T1No33ocuP97/4z6ilpm0m/0WJ8MYk=
-        distributions: "sdist bdist_wheel"
-        on:
-          tags: true
-
+  - stage: test
+    install: pip install tox codecov
+    python: 3.6
+    env:
+    - TOXENV=py36
+    script: tox
+  - stage: deploy
+    script: skip
+    python: 3.6
+    deploy:
+      provider: pypi
+      username: bgolden
+      password:
+        secure: PxEzBoEsODN7MA0B3lHqdhY8A+4K/DJ9jEQSaBZkqE/2fSFKoh6UKBlXZr7pd7ipMmZYU15ysqHPkOToA2pP8WG1guSLV150qUGRYOTd/EOP8TgufZ0VGRZOiQXuPFVp5cg32QOtaIzaxkDaUon1fpKiMXtMCckBMdJ0iL7HS4ZGltOGQsFbQXcdpIb6uYCixyXoiAFgksvySrM8G5mn65yjqhXUh+UnUxPTkhsF/HIKZM3ezhV3bY1hcX+l7J/ZxWisR0fT88q/COJn9zXQxGY0c4k5i1KtYX6r5Pbd8fFYg9D5GpKiylIdl+2K+NZuTzjCiBAjg1KfWg4tKh8gDDgy/QCa6gqojhsi+XnbeOraRsJ6tbRxLd1YXeyluQgp6w1Hi0Eg634mM+pZtb6SvYvGQz2sM0A7m9K/6tuFwqDN52pNaZpLvQd4jppIDmfwbAoB9ykAN2+mPtVp0fHoMczcAgUh+8olck1/nil3Hcw1nkKTa/VYOF+hoEylDQMwjSgApcgSwPTEgWMLRQNIUs+zVSkg+d+Jr65rOdIY3tdJ2RwnEov0QI8aW67xn1q1iBjCF8Ssyi/mbjwNeH1qt5Rw2wMullbVeHXHuIkSOetBZ5w/XSSF6v3Df3s9l3+F3dhMlRU/Pmym3T1No33ocuP97/4z6ilpm0m/0WJ8MYk=
+      distributions: sdist bdist_wheel
+      on:
+        tags: true
 after_success:
-  - codecov --env TRAVIS_OS_NAME,TOXENV
+- codecov --env TRAVIS_OS_NAME,TOXENV
+deploy:
+  password:
+    secure: SD+bos8dSOzVTCy8QHNcUaE+Jtrys7MAX/7EvqoFZATUcs96M2mtzJ2pP1cn9AdQAqJSFC5hFCezuKw7qWUXHs4HlqoxD6mNfjP5jhc5KaTs2Det7ukfkJheVzzY9l6EhnKpmnKOZikXhahFLTs7hvQgLG6/PPcilmJrCh5xQeLOBvbBTzlhhfjrvruSd8PScgCitzqnzJjiHuVfiicX/ACqP6QSrEh3V5XV+hC/WTrU2gwmJJU2z3ZIlorbvxEWKIjTgwQrZc/Sz8P9U1UoW7qOOEcbzFyQQppEMdJsI/eElmYbBTPP8jQzCWyNYZ0hz/I378bDmK72c9nXLFJa1A2zChNqkhdTfIUS1H791DWXSmjKtcn3c9QNOV0biaDDXlQrsV5I9YtNnoU/DuJLy/5gdIEEdk0HfF8sKmEB28r2xVx8MZTf3UgtTyarapaXQ5PgVvTCLsEXMv+jx49ftquTtAR/SYU4j8rohm2xtkowElOImz92hRXgq1u2rBepFmTdEXvpTwW+RXJhXXKMs/s3Tq17Ngepc/7ZeT556IHNZyEB7pbmQdBJWVte+Su+xLf9tYSGm+I/lCn6koyOKlHeeSkvbhABTJ2WWmdrdBhFwFWxuFqojlOmk/WmRGp5tFMMI6tL5mgrSyaZ7zww41/sx9xUPSLjCcINMzs6rhE=
