@@ -1,0 +1,28 @@
+language: python
+
+stages:
+  - test
+  - deploy
+
+jobs:
+  include:
+    - stage: test
+      install: pip install tox codecov
+      python: 3.6
+      env:
+        - TOXENV=py36
+      script: tox
+    - stage: deploy
+      script: skip
+      python: 3.6
+      deploy:
+        provider: pypi
+        username: bgolden
+        password:
+          secure: PxEzBoEsODN7MA0B3lHqdhY8A+4K/DJ9jEQSaBZkqE/2fSFKoh6UKBlXZr7pd7ipMmZYU15ysqHPkOToA2pP8WG1guSLV150qUGRYOTd/EOP8TgufZ0VGRZOiQXuPFVp5cg32QOtaIzaxkDaUon1fpKiMXtMCckBMdJ0iL7HS4ZGltOGQsFbQXcdpIb6uYCixyXoiAFgksvySrM8G5mn65yjqhXUh+UnUxPTkhsF/HIKZM3ezhV3bY1hcX+l7J/ZxWisR0fT88q/COJn9zXQxGY0c4k5i1KtYX6r5Pbd8fFYg9D5GpKiylIdl+2K+NZuTzjCiBAjg1KfWg4tKh8gDDgy/QCa6gqojhsi+XnbeOraRsJ6tbRxLd1YXeyluQgp6w1Hi0Eg634mM+pZtb6SvYvGQz2sM0A7m9K/6tuFwqDN52pNaZpLvQd4jppIDmfwbAoB9ykAN2+mPtVp0fHoMczcAgUh+8olck1/nil3Hcw1nkKTa/VYOF+hoEylDQMwjSgApcgSwPTEgWMLRQNIUs+zVSkg+d+Jr65rOdIY3tdJ2RwnEov0QI8aW67xn1q1iBjCF8Ssyi/mbjwNeH1qt5Rw2wMullbVeHXHuIkSOetBZ5w/XSSF6v3Df3s9l3+F3dhMlRU/Pmym3T1No33ocuP97/4z6ilpm0m/0WJ8MYk=
+        distributions: "sdist bdist_wheel"
+        on:
+          tags: true
+
+after_success:
+  - codecov --env TRAVIS_OS_NAME,TOXENV

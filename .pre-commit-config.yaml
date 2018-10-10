@@ -1,0 +1,22 @@
+repos:
+-   repo: https://github.com/ambv/black
+    rev: stable
+    hooks:
+    - id: black
+      language_version: python3.6
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: master
+    hooks:
+    - id: flake8
+    - id: trailing-whitespace
+    - id: check-added-large-files
+    - id: check-merge-conflict
+    - id: end-of-file-fixer
+    - id: fix-encoding-pragma
+# -   repo: local
+#     hooks:
+#     - id: unit
+#       name: Run unit tests
+#       language: system
+#       entry: tox -e py36
+#       types: [python]
