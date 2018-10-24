@@ -126,6 +126,20 @@
             ],
             "version": "==1.1.7"
         },
+        "importlib-metadata": {
+            "hashes": [
+                "sha256:36b02c84f9001adf65209fefdf951be8e9014a95eab9938c0779ad5670359b1c",
+                "sha256:60b6481a72908c93ccb707abeb926fb5a15319b9e6f0b76639a718837ee12de0"
+            ],
+            "version": "==0.6"
+        },
+        "importlib-resources": {
+            "hashes": [
+                "sha256:73f454e062ac149bafd262b18c1f9ebc91f53bd6474e028d1bf1c59ebd152efb"
+            ],
+            "markers": "python_version < '3.7'",
+            "version": "==1.0.1"
+        },
         "isort": {
             "hashes": [
                 "sha256:1153601da39a25b14ddc54955dbbacbb6b2d19135386699e2ad58517953b34af",
@@ -180,11 +194,11 @@
         },
         "pre-commit": {
             "hashes": [
-                "sha256:98ec318db1f255e3d5089ae416959ef3c775215a3509620027d446eeabbba740",
-                "sha256:b68f9219c56b50ebafb57f378c5325f9876d06fb29e9cd05daf5cbd6676ce8f2"
+                "sha256:7542bd8ae1c58745175ea0a9295964ee82a10f7e18c4344f5e4c02bd85d02561",
+                "sha256:87f687da6a2651d5067cfec95b854b004e95b70143cbf2369604bb3acbce25ec"
             ],
             "index": "pypi",
-            "version": "==1.11.2"
+            "version": "==1.12.0"
         },
         "py": {
             "hashes": [
@@ -297,6 +311,13 @@
                 "sha256:ca07b4c0b54e14a91af9f34d0919790b016923d157afda5efdde55c96718f752"
             ],
             "version": "==16.0.0"
+        },
+        "wheel": {
+            "hashes": [
+                "sha256:196c9842d79262bb66fcf59faa4bd0deb27da911dbc7c6cdca931080eb1f0783",
+                "sha256:c93e2d711f5f9841e17f53b0e6c0ff85593f3b416b6eec7a9452041a59a42688"
+            ],
+            "version": "==0.32.2"
         }
     }
 }
