@@ -171,8 +171,6 @@ def test_from_env_var_with_default_value_and_alias():
     config = Config()
     os.environ["FOO"] = "BAR"
     config.from_envar("FOO", rename="FOOBAR", default="BAZ")
-    assert config["FOO"] == "BAR"
     assert config["FOOBAR"] == "BAR"
     del os.environ["FOO"]
-    assert config["FOO"] == "BAZ"
     assert config["FOOBAR"] == "BAZ"
