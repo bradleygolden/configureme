@@ -82,7 +82,7 @@ def test_env_var_is_set_then_gets_removed_without_default_raises_exception():
         config["FOO"]
 
 
-def test_env_var_is_set_then_gets_removed_with_default_value_set():
+def test_env_var_is_set_then_gets_removed_with_config_value_set():
     config = Config()
     config.from_object(DevConfig)
     config.from_envar("FOO")
@@ -149,3 +149,28 @@ def test_env_var_can_be_renamed():
     config = Config()
     config.from_envar("FOO_DEBUG", rename="DEBUG")
     assert config["DEBUG"] is True
+
+
+def test_from_env_var_that_equals_not_found():
+    config = Config()
+    os.environ["FOO"] = "not found"
+    config.from_envar("FOO")
+    assert config["FOO"] == "not found"
+
+
+def test_from_env_var_with_default_value():
+    config = Config()
+    os.environ["FOO"] = "BAR"
+    config.from_envar("FOO", default="BAZ")
+    assert config["FOO"] == "BAR"
+    del os.environ["FOO"]
+    assert config["FOO"] == "BAZ"
+
+
+def test_from_env_var_with_default_value_and_alias():
+    config = Config()
+    os.environ["FOO"] = "BAR"
+    config.from_envar("FOO", rename="FOOBAR", default="BAZ")
+    assert config["FOOBAR"] == "BAR"
+    del os.environ["FOO"]
+    assert config["FOOBAR"] == "BAZ"
