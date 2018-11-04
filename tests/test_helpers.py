@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import os
+
 import pytest
 
 from configureme import helpers
@@ -87,3 +89,23 @@ def test_dotenv_to_dict(env_path):
     }
     actual = helpers.dotenv_to_dict(env_path)
     assert actual == expected
+
+
+def test_get_envar_that_doesnt_exist():
+    assert helpers.get_envar("BLAH") is None
+
+
+def test_get_envar_that_does_exist():
+    os.environ["FOO"] = "true"
+    assert helpers.get_envar("FOO") is True
+    del os.environ["FOO"]
+
+
+def test_envar_exists_is_false_when_no_var_exists():
+    assert helpers.envar_exists("BLAH") is False
+
+
+def test_envar_exists_is_true_when_env_var_exists():
+    os.environ["FOO"] = "true"
+    assert helpers.envar_exists("FOO") is True
+    del os.environ["FOO"]
