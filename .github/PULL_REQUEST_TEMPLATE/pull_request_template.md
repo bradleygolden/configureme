@@ -1,6 +1,6 @@
 # Description
 
-Please provide a brief description of your change.
+Please provide a brief description of your change and the reasoning.
 
 # Todos
 
