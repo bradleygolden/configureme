@@ -9,7 +9,7 @@
 #                        |___/
 
 
-VERSION = (0, 1, 1)
+VERSION = (0, 1, 2)
 PRE = "a0"
 
 __version__ = ".".join(map(str, VERSION)) + PRE

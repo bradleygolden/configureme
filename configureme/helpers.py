@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 from typing import Any, Dict
 
 BOOLEAN_STATES = {"true": True, "false": False, "True": True, "False": False}
@@ -80,3 +81,17 @@ def dotenv_to_dict(path: str) -> Dict[str, Any]:
         py_value = str_to_py(value)
         rv[name] = py_value
     return rv
+
+
+def get_envar(name: str) -> Any:
+    rv = None
+    try:
+        env_value = os.environ[name]
+        rv = str_to_py(env_value)
+    except KeyError:
+        pass
+    return rv
+
+
+def envar_exists(name: str) -> bool:
+    return os.getenv(name) is not None
