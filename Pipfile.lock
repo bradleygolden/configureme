@@ -121,17 +121,17 @@
         },
         "identify": {
             "hashes": [
-                "sha256:443f419ca6160773cbaf22dbb302b1e436a386f23129dbb5482b68a147c2eca9",
-                "sha256:bd7f15fe07112b713fb68fbdde3a34dd774d9062128f2c398104889f783f989d"
+                "sha256:432c548d6138cb57a3d8f62f079a025a29b8ae34a50dd3b496bbf661818f2bc0",
+                "sha256:d4401d60bf1938aa3074a352a5cc9044107edf11a6fedd3a1db172c141619b81"
             ],
-            "version": "==1.4.2"
+            "version": "==1.4.3"
         },
         "importlib-metadata": {
             "hashes": [
-                "sha256:408598615665eb2cfc0de15b331aca61c28fe9acac94ea8a82661b60a78bbef4",
-                "sha256:c36d2fd992bf92ad77fb2d124f8f112f5a4c8bc3fbe28a40545c1a7e3f578850"
+                "sha256:6a0080fdc87c8225e004b00b55bd1eab153a32ef5a11e17c14de81edbb8ed1a7",
+                "sha256:c0bdce522d5b215c710f237cfc1f58ace432affd3052176bbb719f53e2465256"
             ],
-            "version": "==0.10"
+            "version": "==0.11"
         },
         "isort": {
             "hashes": [
@@ -224,11 +224,11 @@
         },
         "pytest": {
             "hashes": [
-                "sha256:136632a40451162cdfc18fe4d7ecc5d169b558a3d4bbb1603d4005308a42fd03",
-                "sha256:62b129bf8368554ca7a942cbdb57ea26aafef46cc65bc317cdac3967e54483a3"
+                "sha256:1a8aa4fa958f8f451ac5441f3ac130d9fc86ea38780dd2715e6d5c5882700b24",
+                "sha256:b8bf138592384bd4e87338cb0f256bf5f615398a649d4bd83915f0e4047a5ca6"
             ],
             "index": "pypi",
-            "version": "==4.4.2"
+            "version": "==4.5.0"
         },
         "pytest-cov": {
             "hashes": [
@@ -314,6 +314,13 @@
                 "sha256:bfc98bb9b42a3029ee41b96dc00a34c2f254cbf7716bec824477b2c82741a5c4"
             ],
             "version": "==16.5.0"
+        },
+        "wcwidth": {
+            "hashes": [
+                "sha256:3df37372226d6e63e1b1e1eda15c594bca98a22d33a23832a90998faa96bc65e",
+                "sha256:f4ebe71925af7b40a864553f761ed559b43544f8f71746c2d756c7fe788ade7c"
+            ],
+            "version": "==0.1.7"
         },
         "zipp": {
             "hashes": [
