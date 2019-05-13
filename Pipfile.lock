@@ -121,17 +121,17 @@
         },
         "identify": {
             "hashes": [
-                "sha256:443f419ca6160773cbaf22dbb302b1e436a386f23129dbb5482b68a147c2eca9",
-                "sha256:bd7f15fe07112b713fb68fbdde3a34dd774d9062128f2c398104889f783f989d"
+                "sha256:432c548d6138cb57a3d8f62f079a025a29b8ae34a50dd3b496bbf661818f2bc0",
+                "sha256:d4401d60bf1938aa3074a352a5cc9044107edf11a6fedd3a1db172c141619b81"
             ],
-            "version": "==1.4.2"
+            "version": "==1.4.3"
         },
         "importlib-metadata": {
             "hashes": [
-                "sha256:408598615665eb2cfc0de15b331aca61c28fe9acac94ea8a82661b60a78bbef4",
-                "sha256:c36d2fd992bf92ad77fb2d124f8f112f5a4c8bc3fbe28a40545c1a7e3f578850"
+                "sha256:6a0080fdc87c8225e004b00b55bd1eab153a32ef5a11e17c14de81edbb8ed1a7",
+                "sha256:c0bdce522d5b215c710f237cfc1f58ace432affd3052176bbb719f53e2465256"
             ],
-            "version": "==0.10"
+            "version": "==0.11"
         },
         "isort": {
             "hashes": [
@@ -240,11 +240,11 @@
         },
         "python-dotenv": {
             "hashes": [
-                "sha256:a84569d0e00d178bc5b957f7ff208bf49287cbf61857c31c258c4a91f571527b",
-                "sha256:c9b1ddd3cdbe75c7d462cb84674d87130f4b948f090f02c7d7144779afb99ae0"
+                "sha256:156f218846bd90e0d537915545cde4a987947c2cecc628b50f9955fdde72534a",
+                "sha256:6640acd76e6cab84648e4fec16c9d19de6700971f9d91d045e7120622167bfda"
             ],
             "index": "pypi",
-            "version": "==0.10.1"
+            "version": "==0.10.2"
         },
         "pyyaml": {
             "hashes": [
